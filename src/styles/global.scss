@@ -1,0 +1,27 @@
+@use "./variables" as vars;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+.dark-theme {
+  background-color: vars.$dark;
+  color: vars.$white;
+}
+
+.light-theme {
+  background-color: vars.$white;
+  color: vars.$black;
+}
+
+.app {
+  text-align: center;
+  padding: 20px 40px;
+  height: 100vh;
+}

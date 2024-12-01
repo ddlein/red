@@ -1,0 +1,9 @@
+@mixin transition($properties: all, $duration: 0.3s, $ease: ease) {
+    transition: $properties $duration $ease;
+  }
+
+  @mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
