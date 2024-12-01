@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import TogglesContext from './TogglesContext';
+import TogglesContext from '../context/TogglesContext';
 
 const useToggles = () => {
   const context = useContext(TogglesContext);

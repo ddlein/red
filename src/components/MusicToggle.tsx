@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import ToggleSwitch from "./ToggleSwitch";
-import useToggles from "../context/useToggles";
+import useToggles from "../services/useToggles";
 
 const musicUrl = "/music.mp3";
 const switchName = "music";
@@ -10,14 +10,13 @@ const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(musicUrl);
-    audioRef.current.loop = true;
+    const audio = new Audio(musicUrl);
+    audio.loop = true;
+    audioRef.current = audio;
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      audio.pause();
+      audioRef.current = null;
     };
   }, []);
 

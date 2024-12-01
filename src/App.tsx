@@ -3,29 +3,10 @@ import MusicToggle from "./components/MusicToggle";
 import InvertToggle from "./components/InvertToggle";
 import { TogglesProvider } from "./context/TogglesContext.tsx";
 import "./styles/index.scss";
-import useToggles from "./context/useToggles.ts";
-import { useEffect } from "react";
+import { useThemeClass } from "./services/useThemeClass.tsx";
 
 const AppContent = () => {
-  const { checkActiveToggles } = useToggles();
-
-  const isInverted = checkActiveToggles("invert");
-  const isThemeActive = checkActiveToggles("theme");
-
-  const themeClass = isInverted
-    ? isThemeActive
-      ? "light-theme"
-      : "dark-theme"
-    : isThemeActive
-    ? "dark-theme"
-    : "light-theme";
-
-  useEffect(() => {
-    document.body.classList.add(themeClass);
-    return () => {
-      document.body.classList.remove(themeClass);
-    };
-  }, [themeClass]);
+  useThemeClass()
 
   return (
     <div className="app">

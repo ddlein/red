@@ -1,5 +1,5 @@
 import ToggleSwitch from './ToggleSwitch';
-import  useToggles  from '../context/useToggles';
+import  useToggles  from '../services/useToggles';
 
 const switchName = 'theme'
 
